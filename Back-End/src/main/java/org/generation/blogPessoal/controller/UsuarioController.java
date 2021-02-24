@@ -3,7 +3,7 @@ package org.generation.blogPessoal.controller;
 import java.util.List;
 import java.util.Optional;
 
-import org.generation.blogPessoal.model.UserLogin;
+import org.generation.blogPessoal.model.UsuarioLogin;
 import org.generation.blogPessoal.model.Usuario;
 import org.generation.blogPessoal.repository.UsuarioRepository;
 import org.generation.blogPessoal.service.UsuarioService;
@@ -36,7 +36,7 @@ public class UsuarioController {
 	}	
 	
 	@PostMapping("/logar")
-	public ResponseEntity<UserLogin> Autentication(@RequestBody Optional<UserLogin> user) {
+	public ResponseEntity<UsuarioLogin> Autentication(@RequestBody Optional<UsuarioLogin> user) {
 		return usuarioService.Logar(user).map(resp -> ResponseEntity.ok(resp))
 				.orElse(ResponseEntity.status(HttpStatus.UNAUTHORIZED).build());
 	}

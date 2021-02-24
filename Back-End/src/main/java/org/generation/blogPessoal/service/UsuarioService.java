@@ -4,7 +4,7 @@ import java.nio.charset.Charset;
 import java.util.Optional;
 import org.apache.commons.codec.binary.Base64;
 
-import org.generation.blogPessoal.model.UserLogin;
+import org.generation.blogPessoal.model.UsuarioLogin;
 import org.generation.blogPessoal.model.Usuario;
 import org.generation.blogPessoal.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +31,7 @@ public class UsuarioService {
 	}
 
 	
-	public Optional<UserLogin> Logar(Optional<UserLogin> user) {
+	public Optional<UsuarioLogin> Logar(Optional<UsuarioLogin> user) {
 
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		Optional<Usuario> usuario = repository.findByUsuario(user.get().getUsuario());

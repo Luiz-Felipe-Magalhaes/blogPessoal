@@ -1,6 +1,6 @@
 package org.generation.blogPessoal.model;
 
-public class UserLogin 
+public class UsuarioLogin 
 {
 	private long id;
 	
