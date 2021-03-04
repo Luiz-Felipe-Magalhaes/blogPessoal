@@ -15,19 +15,27 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 @Configuration
 public class SwaggerConfig {
-    @Bean
-    public Docket docket() {
-        return new Docket(DocumentationType.SWAGGER_2).select()
-                .apis(RequestHandlerSelectors.basePackage("org.generation.blogPessoal.controller"))
-                .paths(PathSelectors.any()).build().apiInfo(apiInfo());
-    }
+	@Bean
+	public Docket docket(){
+		return new Docket(DocumentationType.SWAGGER_2)
+				.select()
+				.apis( RequestHandlerSelectors.basePackage("org.generation.blogPessoal.controller") )
+				.paths(PathSelectors.any())
+				.build()
+				.apiInfo(apiInfo());
+	}
 
-    private ApiInfo apiInfo() {
-        return new ApiInfoBuilder().title("Blog Pessoal - Luiz Felipe Magalhães").description("API do Blog pessoal Generation - Swagger2").version("1.0")
-                .contact(contact()).build();
-    }
+	private ApiInfo apiInfo() {
+		return new ApiInfoBuilder()
+				.title("Blog Pessoal - Gustavo Rabelo")
+				.description("API do Projeto de blog pessoal")
+				.version("1.0")
+				.contact(contact()).build();
+	}
 
-    private Contact contact() {
-        return new Contact("Luiz Felipe Magalhães", "https://github.com/Luiz-Felipe-Magalhaes", "Desenvolvedor Java Full Stack");
-    }
+	private Contact contact() {
+		return new Contact("Gustavo Rabelo Teles", 
+				"https://github.com/guhrabelo",
+				"Desenvolvedor Full Stack Java");
+	}
 }

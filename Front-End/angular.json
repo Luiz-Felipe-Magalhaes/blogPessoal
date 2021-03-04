@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Front-End": {
+    "blogPessoal": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/Front-End",
+            "outputPath": "dist/blogPessoal",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -70,18 +70,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "Front-End:build"
+            "browserTarget": "blogPessoal:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "Front-End:build:production"
+              "browserTarget": "blogPessoal:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Front-End:build"
+            "browserTarget": "blogPessoal:build"
           }
         },
         "test": {
@@ -118,16 +118,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "Front-End:serve"
+            "devServerTarget": "blogPessoal:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "Front-End:serve:production"
+              "devServerTarget": "blogPessoal:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "Front-End"
+  "defaultProject": "blogPessoal"
 }

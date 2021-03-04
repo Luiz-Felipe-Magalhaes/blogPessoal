@@ -17,19 +17,19 @@ export class TemaComponent implements OnInit {
   constructor(
     private router: Router,
     private temaService: TemaService
-
   ) { }
 
   ngOnInit() {
-    if (environment.token == ''){
+    if(environment.token == ''){
+      alert('Sua sessão expirou, faça o login novamente')
       this.router.navigate(['/entrar'])
     }
-    
-     this.findAllTemas() 
+
+    this.findAllTemas()
   }
 
   findAllTemas(){
-    this.temaService.getAllTema().subscribe((resp: Tema[])=> {
+    this.temaService.getAllTema().subscribe((resp: Tema[])=>{
       this.listaTemas = resp
     })
   }
@@ -37,10 +37,12 @@ export class TemaComponent implements OnInit {
   cadastrar(){
     this.temaService.postTema(this.tema).subscribe((resp: Tema)=>{
       this.tema = resp
-      alert('Tema cadastrado com sucesso!')
+      alert('Tema Cadastrado com Sucesso!')
       this.findAllTemas()
       this.tema = new Tema()
     })
   }
+
+  
 
 }

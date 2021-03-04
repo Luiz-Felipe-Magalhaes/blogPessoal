@@ -1,22 +1,23 @@
 package org.generation.blogPessoal.model;
 
-public class UsuarioLogin 
-{
+public class UserLogin {
+	
 	private long id;
-	
+
 	private String nome;
-	
+
 	private String usuario;
-	
+
 	private String senha;
-	
+
 	private String token;
 	
 	private String foto;
 	
 	private String tipo;
+
 	
-	//Getters and Setters:
+	
 	public long getId() {
 		return id;
 	}
@@ -71,7 +72,5 @@ public class UsuarioLogin
 
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
-	}	
-	
-	
+	}
 }
